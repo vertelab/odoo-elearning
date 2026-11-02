@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ── Sektion 3 ─────────────────────────────────────────────── -->
+    <record id="slide_cat_3" model="slide.slide">
+        <field name="name">3. Från canvas till drift</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="is_category" eval="True"/>
+        <field name="slide_category">document</field>
+        <field name="sequence" eval="200"/>
+    </record>
+
+    <record id="slide_3_article" model="slide.slide">
+        <field name="name">63 av 63 synkade — mot noll poster</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="category_id" ref="slide_cat_3"/>
+        <field name="slide_category">article</field>
+        <field name="is_published" eval="True"/>
+        <field name="sequence" eval="210"/>
+        <field name="html_content">&lt;section class="s_cover o_cc o_cc3 pt160 pb160"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="display-3-fs" style="text-align: center;"&gt;Ett system som rapporterar framgång&lt;/h1&gt;
+        &lt;p class="lead" style="text-align: center;"&gt;Det här är ett verkligt fall ur vår egen drift. Det är anonymiserat, men det är inte påhittat — och det är därför det är värt att lära sig av.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt64 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Vad som hände&lt;/h2&gt;
+        &lt;p&gt;Ett system vi driftar skulle synkronisera poster mellan en databas och en graf. Efter körning rapporterade det &lt;strong&gt;63 av 63 synkade&lt;/strong&gt;.&lt;/p&gt;
+        &lt;p&gt;Grafen innehöll &lt;strong&gt;noll noder&lt;/strong&gt;.&lt;/p&gt;
+        &lt;p&gt;Ingen kod var trasig. Inget fel loggades. Inget larm gick. Systemet hade gjort precis det det var byggt för att göra — och rapporterat det korrekt enligt sin egen definition av framgång.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Varför det gick fel&lt;/h2&gt;
+        &lt;p&gt;Synkroniseringen letade upp en post att uppdatera. Posten fanns inte. Ett uppslag som inte hittar något &lt;strong&gt;misslyckas inte&lt;/strong&gt; — det returnerar noll rader och går vidare. Nästa steg i flödet kördes aldrig, eftersom det bara körs när något hittats. Inget fel uppstod, för inget fel &lt;em&gt;inträffade&lt;/em&gt;.&lt;/p&gt;
+        &lt;p&gt;Systemet räknade varje post som behandlad. Varje post hade behandlats. Att behandlingen bestod i att inte göra något framgick inte av räknaren.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Vad det här lär oss&lt;/h2&gt;
+        &lt;p&gt;Det här är inte en berättelse om slarv. Det är en berättelse om &lt;strong&gt;en mätpunkt som mäter fel sak&lt;/strong&gt;. "Antal behandlade poster" är ett mått på aktivitet. Det är inte ett mått på resultat.&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;Ett grönt resultat är inte ett bevis.&lt;/strong&gt; Det är en påstående som måste verifieras mot något annat än sig självt.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Frånvaro av fel är inte framgång.&lt;/strong&gt; Inget larm betyder bara att ingen kontroll fångade något.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Räknaren ska räkna effekt, inte anrop.&lt;/strong&gt; Frågan är inte hur många poster som behandlades, utan hur många som faktiskt förändrades.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;En trovärdig slutsats som var fel&lt;/h2&gt;
+        &lt;p&gt;Samma mönster dök upp i en annan utredning. Ett återkommande fel skulle förklaras. En hypotes lades fram — teknisk, rimlig, välformulerad — och den förklarade det vi såg.&lt;/p&gt;
+        &lt;p&gt;Den var fel. Loggen visade att det verkliga stoppet var något helt annat: en död referens som gav fel med jämna intervall. Hypotesen hade byggts på &lt;em&gt;ett urval&lt;/em&gt; av bevisen, inte på bevisen.&lt;/p&gt;
+        &lt;p&gt;Det är samma fälla som synkroniseringen, fast i mänsklig form: vi mätte det vi kunde mäta, och drog slutsatsen att det var allt som fanns.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Riskklassning — varför den finns&lt;/h2&gt;
+        &lt;p&gt;EU AI Act klassar AI-system efter vilken skada de kan orsaka: förbjudna, högrisk, begränsad risk och minimal risk. Klassningen avgör vilka krav som gäller — dokumentation, mänsklig översyn, loggning, teknisk dokumentation.&lt;/p&gt;
+        &lt;p&gt;Poängen med klassningen är inte byråkratin. Det är att den tvingar fram svaret på frågan mallen saknade: &lt;strong&gt;vilken skada är acceptabel, och vem bär den?&lt;/strong&gt; Ett system som rapporterar felaktig framgång i ett produktionsflöde är inte ett högrisk-system i lagens mening — men det är ett system vars fel ingen upptäcker.&lt;/p&gt;
+        &lt;p&gt;ISO 42001 ställer samma frågor i ledningssystemform: riskbedömning, dokumenterad styrning, kontinuerlig uppföljning. Båda ramverken pekar på samma sak som vårt fall saknade — &lt;strong&gt;en verifiering som inte är systemets egen räknare&lt;/strong&gt;.&lt;/p&gt;
+        &lt;p class="small text-muted"&gt;Den här sektionen nämner ramverken för att du ska veta att de finns och vad de kräver. Den uttömmer dem inte.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_call_to_action o_cc o_cc5 pt48 pb48"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-9"&gt;
+                &lt;h3&gt;Fråga alltid: vad mäter räknaren?&lt;/h3&gt;
+                &lt;p class="lead"&gt;Ett system som säger att det lyckats har bara sagt att det anropades. Beviset ligger någon annanstans.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ── Sektion 4 ─────────────────────────────────────────────── -->
+    <record id="slide_cat_4" model="slide.slide">
+        <field name="name">4. Plattformen som bärare</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="is_category" eval="True"/>
+        <field name="slide_category">document</field>
+        <field name="sequence" eval="300"/>
+    </record>
+
+    <record id="slide_4_article" model="slide.slide">
+        <field name="name">Från canvas till spårbarhet</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="category_id" ref="slide_cat_4"/>
+        <field name="slide_category">article</field>
+        <field name="is_published" eval="True"/>
+        <field name="sequence" eval="310"/>
+        <field name="html_content">&lt;section class="s_cover o_cc o_cc3 pt160 pb160"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="display-3-fs" style="text-align: center;"&gt;Dokumentet som glöms&lt;/h1&gt;
+        &lt;p class="lead" style="text-align: center;"&gt;En canvas som ligger i en presentation är ett minne av ett samtal. En canvas som ligger i ett system är ett spår som går att följa. Skillnaden avgör om ni kan svara på vad som hände.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt64 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Problemet med det fristående dokumentet&lt;/h2&gt;
+        &lt;p&gt;En ifylld canvas är ett ögonblick. Sex månader senare har förutsättningarna ändrats, någon har slutat, och ingen minns varför en ruta fylldes i som den gjorde. Dokumentet finns kvar — men det svarar inte på frågan "varför blev det så här?".&lt;/p&gt;
+        &lt;p&gt;Det är inte ett dokumentationsproblem. Det är ett &lt;strong&gt;spårbarhetsproblem&lt;/strong&gt;: beslutet, arbetet och resultatet lever på tre olika ställen, och ingen av dem pekar på de andra.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Kedjan som håller&lt;/h2&gt;
+        &lt;p&gt;Ett arbete som går att följa har tre led, och de ska hänga ihop i ett system — inte i tre dokument:&lt;/p&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;strong&gt;Uppgiften&lt;/strong&gt; — vad som ska göras, av vem, med vilken problemställning. Det här är det som ersätter den lösryckta canvasen.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Planen&lt;/strong&gt; — hur det ska göras, steg för steg, med risker och beroenden. Planen hör till uppgiften, inte till ett separat dokument.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Use caset&lt;/strong&gt; — vad funktionen gör, hur den används, och hur någon annan verifierar att den fungerar. Det här ledet är det som saknas oftast.&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;p&gt;När de tre ligger på samma post går det att i efterhand se vad som beslutades, varför, och om det höll. När de ligger separat går det inte.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Varför use caset är det viktigaste ledet&lt;/h2&gt;
+        &lt;p&gt;En uppgift kan vara avslutad utan att någon vet om den fungerar. En plan kan vara genomförd utan att resultatet håller. Use caset är det enda ledet som tvingar fram svaret på frågan från sektion 1: &lt;strong&gt;hur vet vi att det fungerar?&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;Det ska innehålla tre saker:&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Vad funktionen gör — i klartext, för någon som inte byggde den.&lt;/li&gt;
+            &lt;li&gt;Hur den används — flödet, steg för steg.&lt;/li&gt;
+            &lt;li&gt;Hur manuella tester går till — numrerade steg med förväntat resultat, så att någon annan kan följa dem och verifiera.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;Det tredje är det som skiljer en beskrivning från ett bevis. Om testet inte kan utföras av någon annan än den som byggde systemet, är det inget test.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Kopplingen tillbaka till fallet&lt;/h2&gt;
+        &lt;p&gt;Kom ihåg synkroniseringen som rapporterade 63 av 63. Om den hade haft ett use case med manuella tester — "verifiera att antalet noder i grafen ökat" — hade felet upptäckts samma dag.&lt;/p&gt;
+        &lt;p&gt;Det är inte mer dokumentation som hade räddat den. Det är &lt;strong&gt;en verifiering som tittar på resultatet i stället för på räknaren&lt;/strong&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_call_to_action o_cc o_cc5 pt48 pb48"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-9"&gt;
+                &lt;h3&gt;Spårbarhet är inte dokumentation&lt;/h3&gt;
+                &lt;p class="lead"&gt;Det är skillnaden mellan att kunna visa vad som hände och att tro att man minns det.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</field>
+    </record>
+
+    <!-- ── Sektion 5 ─────────────────────────────────────────────── -->
+    <record id="slide_cat_5" model="slide.slide">
+        <field name="name">5. Manuellt test</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="is_category" eval="True"/>
+        <field name="slide_category">document</field>
+        <field name="sequence" eval="400"/>
+    </record>
+
+    <record id="slide_5_article" model="slide.slide">
+        <field name="name">Verifiera ditt eget flöde</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="category_id" ref="slide_cat_5"/>
+        <field name="slide_category">article</field>
+        <field name="is_published" eval="True"/>
+        <field name="sequence" eval="410"/>
+        <field name="html_content">&lt;section class="s_cover o_cc o_cc3 pt160 pb160"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="display-3-fs" style="text-align: center;"&gt;Testet som någon annan kan göra&lt;/h1&gt;
+        &lt;p class="lead" style="text-align: center;"&gt;Ett test som bara du kan utföra är ingen verifiering. Här är hur du skriver ett som någon annan kan följa — och hur du kontrollerar att det du själv skrivit håller.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt64 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Kravet på ett manuellt test&lt;/h2&gt;
+        &lt;p&gt;Ett manuellt test ska ha fyra delar. Saknas någon av dem går det inte att följa:&lt;/p&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;strong&gt;Förutsättning&lt;/strong&gt; — vad som måste vara på plats innan testet börjar.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Steg&lt;/strong&gt; — numrerade, konkreta, utan antaganden om förkunskaper.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Förväntat resultat&lt;/strong&gt; — vad som ska hända, mätbart.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Felsökning&lt;/strong&gt; — vad det betyder om det inte händer.&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Övning — granska ett test du själv skrivit&lt;/h2&gt;
+        &lt;p&gt;Ta fram ett test, en checklista eller en "så gör du"-instruktion som du eller din organisation använder. Läs den mot de fyra delarna ovan.&lt;/p&gt;
+        &lt;p&gt;Tre frågor att ställa:&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Kan någon som inte var med när systemet byggdes följa det här?&lt;/li&gt;
+            &lt;li&gt;Står det vad som ska hända, eller bara vad man ska göra?&lt;/li&gt;
+            &lt;li&gt;Om det inte händer — framgår det vad det betyder?&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;Om svaret är nej på någon av dem är det inte ett test. Det är en påminnelse.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Facit — de vanligaste bristerna&lt;/h2&gt;
+        &lt;table class="table table-sm"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;&lt;th&gt;Brist&lt;/th&gt;&lt;th&gt;Symtom&lt;/th&gt;&lt;th&gt;Rättelse&lt;/th&gt;&lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Tyst förutsättning&lt;/td&gt;
+                    &lt;td&gt;"Öppna systemet" — vilket system, med vilken behörighet?&lt;/td&gt;
+                    &lt;td&gt;Skriv ut förutsättningen, även när den känns självklar&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Steg utan resultat&lt;/td&gt;
+                    &lt;td&gt;"Klicka på Spara" — och sedan?&lt;/td&gt;
+                    &lt;td&gt;Varje steg ska ha ett förväntat utfall, även de triviala&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Resultat som inte går att mäta&lt;/td&gt;
+                    &lt;td&gt;"Det ska se bra ut"&lt;/td&gt;
+                    &lt;td&gt;Skriv vad som ska synas, var, och hur många&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Ingen felsökning&lt;/td&gt;
+                    &lt;td&gt;Testet stannar vid att det gick fel&lt;/td&gt;
+                    &lt;td&gt;Beskriv vad felet troligen beror på och vad som ska kontrolleras&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Testar räknaren, inte resultatet&lt;/td&gt;
+                    &lt;td&gt;"Kontrollera att status är Klar"&lt;/td&gt;
+                    &lt;td&gt;Kontrollera att det som skulle hända faktiskt hände — i data, inte i statusfältet&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb64"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Det sista och viktigaste&lt;/h2&gt;
+        &lt;p&gt;Den sista raden i tabellen är hela kursen i en mening. Ett test som kontrollerar statusfältet verifierar systemets egen uppfattning om sig själv. Det är samma räknare som sa 63 av 63.&lt;/p&gt;
+        &lt;p&gt;Verifieringen måste titta på &lt;strong&gt;världen&lt;/strong&gt; — datan, noderna, posterna, utfallet — inte på vad systemet säger om sig själv.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_call_to_action o_cc o_cc5 pt48 pb48"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-9"&gt;
+                &lt;h3&gt;Kursen i en mening&lt;/h3&gt;
+                &lt;p class="lead"&gt;Ett system som säger att det lyckats har bara sagt att det anropades. Beviset ligger i datan — och det är där testet ska titta.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</field>
+    </record>
+
+</odoo>

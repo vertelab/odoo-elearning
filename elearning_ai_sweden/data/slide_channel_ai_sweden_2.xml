@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ── Sektion 2 ─────────────────────────────────────────────── -->
+    <record id="slide_cat_2" model="slide.slide">
+        <field name="name">2. Så läser du AI Canvas kritiskt</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="is_category" eval="True"/>
+        <field name="slide_category">document</field>
+        <field name="sequence" eval="100"/>
+    </record>
+
+    <record id="slide_2_article" model="slide.slide">
+        <field name="name">Granskningsövning — hitta de fem blinda fläckarna</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="category_id" ref="slide_cat_2"/>
+        <field name="slide_category">article</field>
+        <field name="is_published" eval="True"/>
+        <field name="sequence" eval="110"/>
+        <field name="html_content">&lt;section class="s_cover o_cc o_cc3 pt160 pb160"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="display-3-fs" style="text-align: center;"&gt;Fem blinda fläckar&lt;/h1&gt;
+        &lt;p class="lead" style="text-align: center;"&gt;En canvas som ser komplett ut kan sakna allt som avgör om systemet går att driva. Här är de fem vanligaste luckorna — och facit finns längst ner.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt64 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Så gör du&lt;/h2&gt;
+        &lt;p&gt;Ta fram en AI Canvas som du eller din organisation fyllt i. Läs den som om du vore den som ska &lt;em&gt;driva&lt;/em&gt; systemet om sex månader — inte den som fyllde i mallen.&lt;/p&gt;
+        &lt;p&gt;Leta efter följande fem saker. Skriv ner var du hittar dem, eller var du inte hittar dem.&lt;/p&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;strong&gt;Felfrekvensen&lt;/strong&gt; — står det någonstans hur ofta systemet får svara fel innan det är ett problem?&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Ägaren&lt;/strong&gt; — finns ett namn på den som ansvarar när systemet gör fel, inte bara den som beställde det?&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Motbeviset&lt;/strong&gt; — finns det beskrivet vad som skulle få er att &lt;em&gt;avbryta&lt;/em&gt; satsningen?&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Människan i loopen&lt;/strong&gt; — var i flödet sitter en människa som faktiskt kan stoppa det, och vad ser hen?&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Loggen&lt;/strong&gt; — vad sparas om varje beslut systemet fattar, och vem kan läsa det i efterhand?&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Varför just dessa fem&lt;/h2&gt;
+        &lt;p&gt;De är inte valda för att de är svåra. De är valda för att de är &lt;strong&gt;osynliga i efterhand&lt;/strong&gt;. Om felfrekvensen inte är definierad går det inte att avgöra om systemet presterar — allt ser ut som framgång. Om ägaren saknas finns ingen att fråga. Om motbeviset saknas finns ingen utgång.&lt;/p&gt;
+        &lt;p&gt;Var och en av dem motsvarar också ett krav som återkommer i både EU AI Act och ISO 42001 — men de är formulerade här som frågor du kan ställa till en människa, inte som paragrafer.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Facit&lt;/h2&gt;
+        &lt;p class="small text-muted"&gt;Läs inte vidare förrän du gjort övningen.&lt;/p&gt;
+        &lt;table class="table table-sm"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;&lt;th&gt;Fläck&lt;/th&gt;&lt;th&gt;Var den brukar saknas&lt;/th&gt;&lt;th&gt;Vad som händer utan den&lt;/th&gt;&lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Felfrekvens&lt;/td&gt;
+                    &lt;td&gt;I "förväntat utfall" — där står vad som ska hända, aldrig hur ofta det inte gör det&lt;/td&gt;
+                    &lt;td&gt;Allt som inte kraschar räknas som framgång&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Ägare&lt;/td&gt;
+                    &lt;td&gt;I "ansvarig" — som oftast är beställaren, inte den som bär risken&lt;/td&gt;
+                    &lt;td&gt;Ingen att eskalera till när det går fel&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Motbevis&lt;/td&gt;
+                    &lt;td&gt;Ingenstans — mallen har inget fält för att avbryta&lt;/td&gt;
+                    &lt;td&gt;Satsningen fortsätter per automatik, även när den borde stoppats&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Människa i loopen&lt;/td&gt;
+                    &lt;td&gt;I "process" — där ritas flödet utan att någon punkt markeras som beslutspunkt&lt;/td&gt;
+                    &lt;td&gt;Översynen blir symbolisk; ingen kan faktiskt stoppa något&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Logg&lt;/td&gt;
+                    &lt;td&gt;Saknas helt — det är en teknisk detalj, inte en affärsfråga&lt;/td&gt;
+                    &lt;td&gt;Går inte att utreda i efterhand vad systemet gjorde eller varför&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb64"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Om du hittade alla fem&lt;/h2&gt;
+        &lt;p&gt;Då har du antingen en ovanligt genomarbetad canvas — eller så letade du efter det du visste att du skulle hitta. Den andra möjligheten är vanligare, och det är precis den fällan sektion 3 handlar om.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_call_to_action o_cc o_cc5 pt48 pb48"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-9"&gt;
+                &lt;h3&gt;En mall utan utgång&lt;/h3&gt;
+                &lt;p class="lead"&gt;Om det inte finns beskrivet vad som ska få er att avbryta, finns det inget beslut — bara ett fortsättande.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</field>
+    </record>
+
+</odoo>

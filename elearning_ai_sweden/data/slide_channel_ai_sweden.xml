@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ════════════════════════════════════════════════════════════════
+         AI Sweden — Digital Workshop (självstudier)
+
+         Kursen är DATA, inte kod. Den skapas vid installation och är
+         därefter redigerbar i eLearning-appen som vilken kurs som helst.
+
+         Sektionsmönstret följer de befintliga kurserna (Signering i Vertel):
+         is_category=true för sektionsöppnare, sequence 0/100/200/300/400.
+
+         Avvikelse: inga PDF-sektioner (de är tomma skal i samtliga
+         nuvarande kurser) och inga quiz — granskningsövningar med facit
+         i stället, eftersom målgruppen ska motbevisa, inte kontrolleras.
+         ════════════════════════════════════════════════════════════════ -->
+
+    <record id="channel_ai_sweden_digital_workshop" model="slide.channel">
+        <field name="name">AI Sweden — Digital Workshop</field>
+        <field name="channel_type">training</field>
+        <field name="visibility">public</field>
+        <field name="is_published" eval="True"/>
+        <field name="sequence" eval="20"/>
+        <field name="allow_comment" eval="True"/>
+        <field name="description_short">&lt;p&gt;Metodkritik, riskklassning och drift — för dig som redan kan AI. Fem sektioner i eget tempo.&lt;/p&gt;</field>
+        <field name="description">&lt;p&gt;Metodkritik, riskklassning och drift — för dig som redan kan AI. Fem sektioner i eget tempo.&lt;/p&gt;</field>
+    </record>
+
+    <!-- ── Sektion 1 ─────────────────────────────────────────────── -->
+    <record id="slide_cat_1" model="slide.slide">
+        <field name="name">1. Vad det här är och varför</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="is_category" eval="True"/>
+        <field name="slide_category">document</field>
+        <field name="sequence" eval="0"/>
+    </record>
+
+    <record id="slide_1_article" model="slide.slide">
+        <field name="name">Varför en canvas ger falsk trygghet</field>
+        <field name="channel_id" ref="channel_ai_sweden_digital_workshop"/>
+        <field name="category_id" ref="slide_cat_1"/>
+        <field name="slide_category">article</field>
+        <field name="is_published" eval="True"/>
+        <field name="sequence" eval="10"/>
+        <field name="html_content">&lt;section class="s_cover o_cc o_cc3 pt160 pb160"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="display-3-fs" style="text-align: center;"&gt;En ifylld mall är inte ett beslut&lt;/h1&gt;
+        &lt;p class="lead" style="text-align: center;"&gt;En AI Canvas hjälper ett team att tala om samma sak. Den säger ingenting om huruvida det de kommit fram till håller — eller vad som händer när systemet väl är i drift.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt64 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Vad en canvas faktiskt gör&lt;/h2&gt;
+        &lt;p&gt;En canvas är ett samtalsverktyg. Den tvingar fram svar på frågor som annars lämnas osagda: vad är problemet, vem har det, vad är utfallet, vilken data behövs. Det är värdefullt — men det är också allt den gör.&lt;/p&gt;
+        &lt;p&gt;Den färdiga canvasen ser ut som en plan. Den har rutor, den är ifylld, den kan fotograferas och läggas i en presentation. Det är där den falska tryggheten uppstår: &lt;strong&gt;en ifylld ruta känns som ett fattat beslut&lt;/strong&gt;, men ingenstans i mallen står det vem som äger risken, vad som händer när modellen svarar fel, eller hur ni får veta att den gjorde det.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Tre frågor som mallen inte ställer&lt;/h2&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;strong&gt;Hur vet vi att det fungerar?&lt;/strong&gt; — Inte "fungerar det i demon", utan hur ni mäter det i drift, och vad som räknas som fel.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Vem äger felet?&lt;/strong&gt; — När systemet gör något fel, vems ansvar är det? Om svaret är "modellens" har ni inget svar.&lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;Vad är det värsta som kan hända?&lt;/strong&gt; — Och är den skadan acceptabel? Den frågan är inte retorisk; den har ett formellt svar i EU AI Act.&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb40"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Varför den här kursen finns&lt;/h2&gt;
+        &lt;p&gt;Vertels Digitaliseringsworkshop är byggd för en bred målgrupp. Den börjar med vad AI är och hur man fyller i en canvas. För dig som redan arbetar med AI är det för sent att börja där — du behöver veta &lt;em&gt;när mallen ljuger för dig&lt;/em&gt;.&lt;/p&gt;
+        &lt;p&gt;Därför är den här kursen vänd: samma områden, men varje sektion ställer frågan &lt;strong&gt;"hur går det här fel?"&lt;/strong&gt; i stället för "hur gör man?".&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_text_block pt32 pb64"&gt;
+    &lt;div class="container s_allow_columns"&gt;
+        &lt;h2&gt;Ett fall att hålla i&lt;/h2&gt;
+        &lt;p&gt;Kursen återkommer till ett verkligt fall ur vår egen drift. Ett system vi driftar rapporterade &lt;strong&gt;63 av 63 synkade&lt;/strong&gt; poster. Det fanns &lt;strong&gt;noll&lt;/strong&gt; poster att synka. Ingen kod var trasig. Inget fel loggades.&lt;/p&gt;
+        &lt;p&gt;Vi återkommer till det i sektion 3. Tills dess: fundera på hur ett sådant system skulle se ut i en dashboard.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="s_call_to_action o_cc o_cc5 pt48 pb48"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-9"&gt;
+                &lt;h3&gt;Frågan är inte om mallen är ifylld&lt;/h3&gt;
+                &lt;p class="lead"&gt;Frågan är om ni kan svara på vad som händer när systemet gör fel — och hur ni får veta det.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</field>
+    </record>
+
+</odoo>
